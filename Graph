@@ -59,7 +59,6 @@ public:int getVertexPos(int vertex)
 		if (NodeTable[i].id == vertex)
 			return i;//这个结点在第几排
 	}
-
 }
 	   int getVertexPos(const Vertex vertex)
 	   {
@@ -162,7 +161,7 @@ bool Graph::insertEdge(int v1, int v2, double weight, int sign)//这里的v1 v2�
 		{
 			p = p->link;
 		}
-		if (p->dest == v2)
+		if (p!=NULL)
 		{
 			return false;
 		}
