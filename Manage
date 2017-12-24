@@ -18,33 +18,6 @@ class Manage
    bool addVertex();//新建结点，也要改写文件哦~
    bool addEdge();//这里不仅会调用Graph的函数，同时也要改写文件
 }
-void printPath(Graph& G, int v, int dist[], int path[])
-{//输出path数组中存储的图G从顶点v到其余各顶点的路径和距离
-	cout << "从路由器" << G.getvalue(v) << "到其他各顶点的最短路径为：" << endl;
-	int i, j, k;
-	int n = G.NumberOfVertices();
-	int *d = new int[n];
-	for (i = 0; i<n; i++)
-	{
-		if (i != v)
-		{
-			j = i;
-			k = 0;
-			while (j != v)
-			{
-				d[k++] = j;
-				j = path[j];
-			}
-			cout << "顶点" << G.getvalue(i) << "的最短路径为：" << G.getvalue(v) << " ";
-			while (k>0)
-			{
-				cout << G.getvalue(d[--k]) << " ";
-			}
-			cout << "最短路径长度为：" << dist[i] << endl;
-		}
-	}
-	delete[] d;
-}
 
 void print(Graph& G, int v,int dist[], int path[])
 {
